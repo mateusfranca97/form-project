@@ -9,9 +9,6 @@ let percentProduct = document.querySelector("#percentProduct");
 //list
 let productList = document.querySelector("#productList");
 
-//buttons
-let buttonSubmit = document.querySelector("#addProduct");
-
 class Product {
   constructor(name, amount, price, percent) {
     this.name = name;
@@ -22,10 +19,13 @@ class Product {
 }
 
 let products = [
-  { name: "Batata", amount: 0, price: 0, percent: 0 },
-  { name: "Feijão", amount: 1, price: 1, percent: 1 },
+  {name: 'Feijão', amount: 0, price: 6.20, percent: 0},
+  {name: 'Batata', amount: 10, price: 5.50, percent: 0}
 ];
 
+let productsSelling = []
+
+let buttonSubmit = document.querySelector("#addProduct");
 buttonSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   if (
@@ -95,6 +95,23 @@ IdProductSell.addEventListener("change", () => {
     }
   });
 });
+
+let productListSell = document.querySelector("#productListSell");
+let sellProduct = document.querySelector("#sellProduct");
+let amountProductSell = document.querySelector("#amountProductSell");
+
+// sellProduct.addEventListener("click", () => {
+//   products.forEach((element, index) => {
+//     if(IdProductSell.value == index + 1 && element.amount > 0){
+//       element.amount -= amountProductSell.value;
+//       productsSelling.push(element);
+//       console.log(productsSelling)
+//       console.log(`Estoque atualizado: ${element.name} ${element.amount}`);
+//     } else{
+//       alert("Produto sem estoque");
+//     }
+//   });
+// });
 
 //----- Modal ------
 let modal = document.querySelector("#my-modal");
